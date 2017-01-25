@@ -1,5 +1,5 @@
 {
-  "name": "obama-lambda",
+  "name": "serverless-starter",
   "version": "1.0.0",
   "main": "src/handler.js",
   "license": "MIT",
