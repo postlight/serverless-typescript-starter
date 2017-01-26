@@ -1,7 +1,7 @@
 const nodeExternals = require('webpack-node-externals');
 
 module.exports = {
-  entry: './src/handler.js',
+  entry: './src/api/handler.js',
   target: 'node',
   externals: [
     'babel-runtime',
