@@ -14,7 +14,7 @@ yarn
 yarn watch:hello
 ```
 
-## Optional
+## Things to try...
 
 If you want to render React:
 
