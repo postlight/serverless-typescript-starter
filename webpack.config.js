@@ -4,6 +4,7 @@ module.exports = {
   entry: './src/handler.js',
   target: 'node',
   externals: [
+    'babel-runtime',
     nodeExternals(),
   ],
   module: {
@@ -12,6 +13,6 @@ module.exports = {
       loaders: ['babel'],
       include: __dirname,
       exclude: /node_modules/,
-    }]
-  }
+    }],
+  },
 };

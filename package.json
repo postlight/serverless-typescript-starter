@@ -4,7 +4,10 @@
   "main": "src/handler.js",
   "license": "MIT",
   "scripts": {
-    "deploy": "serverless deploy",
+    "deploy:env": "sls deploy --stage $NODE_ENV",
+    "deploy": "export NODE_ENV=dev && yarn deploy:env",
+    "deploy:prod": "export NODE_ENV=prod && yarn deploy:env",
+    "deploy:stage": "export NODE_ENV=stage && yarn deploy:env",
     "watch:hello": "serverless webpack watch --function hello --path fixtures/event.json",
     "tail:hello": "serverless logs --function hello --tail"
   },
