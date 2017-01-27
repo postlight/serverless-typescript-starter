@@ -4,16 +4,18 @@
   "main": "src/handler.js",
   "license": "MIT",
   "scripts": {
-    "deploy:env": "sls deploy --stage $NODE_ENV",
+    "deploy:env": "sls deploy --stage $NODE_ENV && yarn deploy:static",
     "deploy": "export NODE_ENV=dev && yarn deploy:env",
     "deploy:prod": "export NODE_ENV=prod && yarn deploy:env",
     "deploy:stage": "export NODE_ENV=stage && yarn deploy:env",
+    "deploy:static": "yarn build:static && serverless client deploy",
     "watch:hello": "serverless webpack watch --function hello --path fixtures/event.json",
     "tail:hello": "serverless logs --function hello --tail",
+    "test": "jest --watch",
     "serve": "serverless webpack serve",
-    "web": "webpack --progress --colors --watch --config web.webpack.config.js",
+    "build:static": "export NODE_ENV=prod && webpack --progress --colors --config web.webpack.config.js",
     "webpack-dev-server": "webpack-dev-server --inline --hot --progress --colors --watch --config web.webpack.config.js",
-    "start": "concurrently -k \"yarn serve\" \"yarn webpack-dev-server\""
+    "start": "export NODE_ENV=dev && concurrently -k \"yarn serve\" \"yarn webpack-dev-server\""
   },
   "devDependencies": {
     "babel-core": "^6.22.1",
@@ -29,7 +31,9 @@
     "eslint-plugin-import": "^2.2.0",
     "eslint-plugin-jsx-a11y": "^3.0.2",
     "eslint-plugin-react": "^6.9.0",
+    "jest": "^18.1.0",
     "serverless": "^1.5.1",
+    "serverless-client-s3": "serverless/serverless-client-s3#1e074d1",
     "serverless-webpack": "^1.0.0-rc.4",
     "webpack-dev-server": "^1.16.2",
     "webpack-node-externals": "^1.5.4"

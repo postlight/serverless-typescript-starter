@@ -22,15 +22,18 @@ provider:
   runtime: nodejs4.3
   # If you want to change to a different AWS profile
   # from ~/.aws/credentials, you can do so here
-  profile: Default 
+  profile: AdamHome 
 
 plugins:
   - serverless-webpack
+  - serverless-client-s3
 
 custom:
   webpack: ./serverless.webpack.config.js
   webpackIncludeModules:
     - 'babel-runtime'
+  client:
+    bucketName: hello-react-universal
 
 
 # you can overwrite defaults here
