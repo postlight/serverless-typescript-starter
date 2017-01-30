@@ -16,7 +16,7 @@ yarn watch:hello
 
 ## Deploy
 
-Assuming you've already set up your AWS credentials:
+Assuming you've already set up your default AWS credentials:
 
 ```bash
 yarn deploy
