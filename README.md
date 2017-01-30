@@ -38,6 +38,8 @@ so you should be able to test the deployed API via that URL.
 
 ## Ideas in progress
 
+### Universal React
+
 See [this PR](https://github.com/postlight/serverless-babel-starter/pull/1) to see an example of
 universal rendering w/React.
 
