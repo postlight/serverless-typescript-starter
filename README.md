@@ -16,7 +16,7 @@ yarn watch:hello
 
 ## Deploy
 
-Assuming you've already set up your default AWS credentials:
+Assuming you've already set up your default AWS credentials (or have set a different AWS profile via [the profile field](serverless.yml#L25)):
 
 ```bash
 yarn deploy
@@ -33,66 +33,15 @@ yarn deploy:stage
 yarn deploy:production
 ```
 
-## FAQ
+After you've deployed, the output of the deploy script will give you the API endpoint for your deployed function(s),
+so you should be able to test the deployed API via that URL.
 
-#### Why is it working locally but not working when I deploy?
+## Ideas in progress
 
-There are obviously plenty of reasons this might be happening, but one common culprit
-involves how webpack packages your dependencies. When you add a new dependency to your
-project, you also need to add it to your [webpack config](webpack.config.js#L7) and to
-your [`serverless.yml`](serverless.yml). For example, after adding lodash as a dependency:
+See [this PR](https://github.com/postlight/serverless-babel-starter/pull/1) to see an example of
+universal rendering w/React.
 
-```bash
-yarn add lodash
-```
-
-...you should update `webpack.config.js` like so:
-
-```javascript
-const nodeExternals = require('webpack-node-externals');
-
-module.exports = {
-  entry: './src/handler.js',
-  target: 'node',
-  externals: [
-    'loadash', // <============== added lodash as external
-    'babel-runtime',
-    nodeExternals(),
-  ],
-  module: {
-    loaders: [{
-      test: /\.js$/,
-      loaders: ['babel'],
-      include: __dirname,
-      exclude: /node_modules/,
-    }],
-  },
-};
-```
-
-...and you should update `serverless.yml` like so:
-
-```yaml
-provider:
-  name: aws
-  runtime: nodejs4.3
-  # If you want to change to a different AWS profile
-  # from ~/.aws/credentials, you can do so here
-  profile: Default 
-
-plugins:
-  - serverless-webpack
-
-custom:
-  webpackIncludeModules:
-    - 'babel-runtime'
-    - 'lodash' # <====================== added lodash here
-```
-
-
-## Things to try...
-
-If you want to render React:
+The PR is much more fleshed out, but for very basic React setup:
 
 ```bash
 yarn add react react-dom
