@@ -28,9 +28,7 @@ plugins:
   - serverless-webpack
 
 custom:
-  webpackIncludeModules:
-    - 'babel-runtime'
-
+  webpackIncludeModules: true
 
 # you can overwrite defaults here
 #  stage: dev
