@@ -9,6 +9,7 @@
     "deploy:prod": "export NODE_ENV=prod && yarn deploy:env",
     "deploy:stage": "export NODE_ENV=stage && yarn deploy:env",
     "watch:hello": "serverless webpack watch --function hello --path fixtures/event.json",
+    "serve": "serverless webpack serve",
     "tail:hello": "serverless logs --function hello --tail",
     "test": "jest",
     "watch:test": "jest --watch"

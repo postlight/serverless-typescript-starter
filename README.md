@@ -8,10 +8,33 @@ git init && git add . && git commit -m "Initial commit"
 yarn
 ```
 
-## Run the hello function (with live reloading)
+## Development
+
+You can develop and test your lambda functions locally in a few different ways.
+
+### Live-reloading functions
+
+To run the hello function with the event data defined in [`fixtures/event.json`](fixtures/event.json) (with live reloading), run:
 
 ```bash
 yarn watch:hello
+```
+
+### API Gateway-like local dev server
+
+To spin up a local dev server that will more closely match the API Gateway endpoint/experience:
+
+```bash
+yarn serve
+```
+
+### Test your functions
+
+Jest is installed as the testrunner. To create a test, co-locate your test with the file it's testing
+as `<filename>.test.js` and then run/watch tests with:
+
+```bash
+yarn test
 ```
 
 ## Deploy
