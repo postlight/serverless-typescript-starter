@@ -6,7 +6,7 @@
   "scripts": {
     "deploy:env": "sls deploy --stage $NODE_ENV",
     "deploy": "export NODE_ENV=dev && yarn deploy:env",
-    "deploy:prod": "export NODE_ENV=prod && yarn deploy:env",
+    "deploy:production": "export NODE_ENV=production && yarn deploy:env",
     "deploy:stage": "export NODE_ENV=stage && yarn deploy:env",
     "watch:hello": "serverless webpack watch --function hello --path fixtures/event.json",
     "serve": "serverless webpack serve",
