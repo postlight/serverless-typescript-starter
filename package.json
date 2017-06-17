@@ -8,11 +8,12 @@
     "deploy": "export NODE_ENV=dev && yarn deploy:env",
     "deploy:prod": "export NODE_ENV=prod && yarn deploy:env",
     "deploy:stage": "export NODE_ENV=stage && yarn deploy:env",
-    "watch:hello": "serverless webpack watch --function hello --path fixtures/event.json",
+    "lint": "eslint ./src",
+    "precommit": "lint-staged",
     "serve": "serverless webpack serve",
     "tail:hello": "serverless logs --function hello --tail",
-    "test": "jest",
-    "watch:test": "jest --watch"
+    "test": "jest --watch",
+    "watch:hello": "serverless webpack watch --function hello --path fixtures/event.json"
   },
   "devDependencies": {
     "babel-core": "^6.22.1",
@@ -23,15 +24,25 @@
     "babel-preset-stage-0": "^6.22.0",
     "eslint": "^3.14.0",
     "eslint-config-airbnb": "^14.0.0",
+    "eslint-config-prettier": "^2.2.0",
     "eslint-plugin-import": "^2.2.0",
     "eslint-plugin-jsx-a11y": "^3.0.2",
     "eslint-plugin-react": "^6.9.0",
+    "husky": "^0.13.4",
     "jest": "^18.1.0",
+    "lint-staged": "^3.6.1",
     "serverless": "^1.5.1",
     "serverless-webpack": "^1.0.0-rc.4",
     "webpack-node-externals": "^1.5.4"
   },
   "dependencies": {
     "babel-runtime": "^6.22.0"
+  },
+  "lint-staged": {
+    "src/**/*.js": [
+      "yarn lint -- --fix",
+      "prettier --write --single-quote --trailing-comma es5",
+      "git add"
+    ]
   }
 }

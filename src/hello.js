@@ -14,4 +14,3 @@ const hello = (event, context, callback) => {
 };
 
 export default hello;
-
