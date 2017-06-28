@@ -22,7 +22,10 @@ provider:
   runtime: nodejs6.10
   # If you want to change to a different AWS profile
   # from ~/.aws/credentials, you can do so here
-  profile: default 
+  profile: default
+  # you can overwrite defaults here
+  #  stage: dev
+  #  region: us-east-1
 
 plugins:
   - serverless-webpack
@@ -30,9 +33,7 @@ plugins:
 custom:
   webpackIncludeModules: true
 
-# you can overwrite defaults here
-#  stage: dev
-#  region: us-east-1
+
 
 # you can add statements to the Lambda function's IAM Role here
 #  iamRoleStatements:
