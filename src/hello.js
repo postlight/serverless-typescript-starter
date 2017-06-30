@@ -1,4 +1,4 @@
-import { successResponse } from './utils/lambda-response';
+import { successResponse, runWarm } from './utils';
 
 const hello = (event, context, callback) => {
   const response = successResponse({
@@ -12,4 +12,4 @@ const hello = (event, context, callback) => {
   // callback(null, { message: 'Go Serverless v1.0! Your function executed successfully!', event });
 };
 
-export default hello;
+export default runWarm(hello);
