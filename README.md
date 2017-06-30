@@ -37,6 +37,57 @@ as `<filename>.test.js` and then run/watch tests with:
 yarn test
 ```
 
+### Keep your lambda functions warm
+
+Lambda functions will go "cold" if they haven't been invoked for a certain period of time (estimates vary, and AWS doesn't offer a clear answer), the function will "go cold". From the [Serverless blog](https://serverless.com/blog/keep-your-lambdas-warm/):
+
+> Cold start happens when you execute an inactive (cold) function for the first time. It occurs while your cloud provider provisions your selected runtime container and then runs your function. This process, referred to as cold start, will increase your execution time considerably.
+
+A frequently running function won't have this problem, but you can keep your function running hot by scheduling a regular ping to your lambda function. Here's what that looks like in your `serverless.yml`:
+
+```yaml
+functions:
+  myFunc:
+    handler: handler.myFunc
+    timeout: 10
+    memorySize: 256
+    events:
+      # ...other config happening up here and then...
+      # Ping every 5 minutes to avoid cold starts
+      - schedule:
+          rate: rate(5 minutes)
+          enabled: true
+```
+
+Your handler function can then handle this event like so:
+
+```javascript
+const myFunc = (event, context, callback) => {
+  // Detect the keep-alive ping from CloudWatch and exit early. This keeps our
+  // lambda function running hot.
+  if (event.source === 'aws.events') { // aws.events is the source for Scheduled events
+    return cb(null, 'pinged');
+  }
+
+  // ... the rest of your function
+}
+
+export default myFunc;
+
+```
+
+Copying and pasting the above can be tedious, so we've added a higher order function to wrap your run-warm functions. You still need to config the ping in your `serverless.ytml` file; then your function should look like this:
+
+```javascript
+import runWarm from './utils'
+
+const myFunc = (event, context, callback) => {
+  // Your function logic
+}
+
+export default runWarm(myFunc);
+```
+
 ## Deploy
 
 Assuming you've already set up your default AWS credentials (or have set a different AWS profile via [the profile field](serverless.yml#L25)):
