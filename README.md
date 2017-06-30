@@ -39,7 +39,7 @@ yarn test
 
 ### Keep your lambda functions warm
 
-Lambda functions will go "cold" if they haven't been invoked for a certain period of time (estimates vary, and AWS doesn't offer a clear answer), the function will "go cold". From the [Serverless blog](https://serverless.com/blog/keep-your-lambdas-warm/):
+Lambda functions will go "cold" if they haven't been invoked for a certain period of time (estimates vary, and AWS doesn't offer a clear answer). From the [Serverless blog](https://serverless.com/blog/keep-your-lambdas-warm/):
 
 > Cold start happens when you execute an inactive (cold) function for the first time. It occurs while your cloud provider provisions your selected runtime container and then runs your function. This process, referred to as cold start, will increase your execution time considerably.
 
@@ -66,7 +66,7 @@ const myFunc = (event, context, callback) => {
   // Detect the keep-alive ping from CloudWatch and exit early. This keeps our
   // lambda function running hot.
   if (event.source === 'aws.events') { // aws.events is the source for Scheduled events
-    return cb(null, 'pinged');
+    return callback(null, 'pinged');
   }
 
   // ... the rest of your function
