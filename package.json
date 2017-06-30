@@ -13,7 +13,8 @@
     "serve": "serverless webpack serve",
     "tail:hello": "serverless logs --function hello --tail",
     "test": "jest --watch",
-    "watch:hello": "serverless webpack watch --function hello --path fixtures/event.json"
+    "watch:hello": "serverless webpack watch --function hello --path fixtures/event.json",
+    "watch:warm": "serverless webpack watch --function hello --path fixtures/scheduled.json"
   },
   "devDependencies": {
     "babel-core": "^6.22.1",
