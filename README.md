@@ -76,7 +76,7 @@ export default myFunc;
 
 ```
 
-Copying and pasting the above can be tedious, so we've added a higher order function to wrap your run-warm functions. You still need to config the ping in your `serverless.ytml` file; then your function should look like this:
+Copying and pasting the above can be tedious, so we've added a higher order function to wrap your run-warm functions. You still need to config the ping in your `serverless.yml` file; then your function should look like this:
 
 ```javascript
 import runWarm from './utils'
