@@ -27,9 +27,6 @@ provider:
   #  stage: dev
   #  region: us-east-1
 
-plugins:
-  - serverless-webpack
-
 custom:
   webpackIncludeModules: true
 
@@ -65,7 +62,7 @@ custom:
 
 functions:
   hello:
-    handler: handler.hello
+    handler: src/handler.hello
     events:
       - http:
           path: hello
@@ -92,7 +89,7 @@ functions:
 #      variable2: value2
 
 # you can add CloudFormation resource templates here
-#resources:
+# resources:
 #  Resources:
 #    NewResource:
 #      Type: AWS::S3::Bucket
@@ -102,3 +99,7 @@ functions:
 #     NewOutput:
 #       Description: "Description for the output"
 #       Value: "Some output value"
+
+plugins:
+  - serverless-webpack
+
