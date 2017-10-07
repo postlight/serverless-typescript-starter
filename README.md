@@ -37,6 +37,23 @@ as `<filename>.test.js` and then run/watch tests with:
 yarn test
 ```
 
+### Adding new functions/files to Webpack
+
+When you add a new function to your serverless config, you don't need to also add it as a new entry
+for Webpack. The `serverless-webpack` plugin allows us to follow a simple convention in our `serverless.yml`
+file which is uses to automatically resolve your function handlers to the appropriate file:
+
+
+```yaml
+functions:
+  hello:
+    handler: src/hello
+```
+
+As you can see, the path to the file with the function has to explicitly say where the handler
+file is. (If your function weren't the default export of that file, you'd do something like:
+`src/hello.namedExport` instead.)
+
 ### Keep your lambda functions warm
 
 Lambda functions will go "cold" if they haven't been invoked for a certain period of time (estimates vary, and AWS doesn't offer a clear answer). From the [Serverless blog](https://serverless.com/blog/keep-your-lambdas-warm/):
@@ -48,7 +65,7 @@ A frequently running function won't have this problem, but you can keep your fun
 ```yaml
 functions:
   myFunc:
-    handler: handler.myFunc
+    handler: src/myFunc
     timeout: 10
     memorySize: 256
     events:
