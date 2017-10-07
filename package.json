@@ -10,7 +10,7 @@
     "deploy:stage": "export NODE_ENV=stage && yarn deploy:env",
     "lint": "eslint ./src",
     "precommit": "lint-staged",
-    "serve": "serverless webpack serve",
+    "serve": "serverless offline start",
     "tail:hello": "serverless logs --function hello --tail",
     "test": "jest --watch",
     "watch:hello": "serverless invoke local --watch --function hello --path fixtures/event.json",
@@ -33,7 +33,9 @@
     "jest": "^21.2.1",
     "lint-staged": "^4.2.3",
     "serverless": "^1.5.1",
+    "serverless-offline": "^3.16.0",
     "serverless-webpack": "^3.1.1",
+    "webpack": "^3.6.0",
     "webpack-node-externals": "^1.5.4"
   },
   "dependencies": {

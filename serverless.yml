@@ -102,4 +102,5 @@ functions:
 
 plugins:
   - serverless-webpack
+  - serverless-offline
 
