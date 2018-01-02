@@ -62,7 +62,7 @@ custom:
 
 functions:
   hello:
-    handler: src/handler.hello
+    handler: src/hello.default
     events:
       - http:
           path: hello

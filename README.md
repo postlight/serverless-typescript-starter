@@ -1,7 +1,9 @@
 # Stacked Serverless Starter Kit
 [![Greenkeeper badge](https://badges.greenkeeper.io/postlight/serverless-babel-starter.svg)](https://greenkeeper.io/)
 
-This starter kit provides a relatively light layer on top of the Serverless framework, giving you the latest in modern JavaScript (ES6 via Webpack + Babel, linting with ESLint, and formatting with Prettier),  and the ease and power of Serverless.
+This starter kit provides a relatively light layer on top of the Serverless framework, giving you the latest in modern JavaScript (ES6 via Webpack + Babel, linting with ESLint, and formatting with Prettier), the ease and power of Serverless, and a few handy helpers (like functions for handling warm functions and response helpers).
+
+Note: Currently, this starter kit specifically targets AWS.
 
 ## Install
 
@@ -60,7 +62,7 @@ file which is uses to automatically resolve your function handlers to the approp
 ```yaml
 functions:
   hello:
-    handler: src/hello
+    handler: src/hello.default
 ```
 
 As you can see, the path to the file with the function has to explicitly say where the handler

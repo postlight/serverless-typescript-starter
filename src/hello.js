@@ -12,4 +12,6 @@ const hello = (event, context, callback) => {
   // callback(null, { message: 'Go Serverless v1.0! Your function executed successfully!', event });
 };
 
+// runWarm function handles pings from the scheduler so you don't
+// have to put that boilerplate in your function.
 export default runWarm(hello);
