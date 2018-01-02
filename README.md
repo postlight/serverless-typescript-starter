@@ -21,7 +21,7 @@ cd serverless-babel-starter
 
 # The bootstrap command renames the project folder and project in package.json and serverless.yml
 # and initializes a git repo
-yarn boostrap your-project-name 
+yarn bootstrap your-project-name 
 
 # Install dependencies
 yarn install
