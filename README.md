@@ -1,5 +1,7 @@
 ## Install
 
+[![Greenkeeper badge](https://badges.greenkeeper.io/postlight/serverless-babel-starter.svg)](https://greenkeeper.io/)
+
 ```bash
 git clone git@github.com:postlight/serverless-babel-starter.git project_name
 cd project_name
