@@ -1,7 +1,9 @@
 # Stacked Serverless Starter Kit
 [![Greenkeeper badge](https://badges.greenkeeper.io/postlight/serverless-babel-starter.svg)](https://greenkeeper.io/)
 
-This starter kit provides a relatively light layer on top of the Serverless framework, giving you the latest in modern JavaScript (ES6 via Webpack + Babel, linting with ESLint, and formatting with Prettier), the ease and power of Serverless, and a few handy helpers (like functions for handling warm functions and response helpers).
+This starter kit provides a relatively light layer on top of the Serverless framework, giving you the latest in modern JavaScript (ES6 via Webpack + Babel, testing with Jest, linting with ESLint, and formatting with Prettier), the ease and power of Serverless, and a few handy helpers (like functions for handling warm functions and response helpers).
+
+Once installed, you can create and deploy functions with the latest ES6 features in minutes, with linting and formatting baked in.
 
 Note: Currently, this starter kit specifically targets AWS.
 
@@ -16,14 +18,44 @@ serverless install --url https://github.com/postlight/serverless-babel-starter
 
 # cd into project and set it up
 cd serverless-babel-starter
+
 # The bootstrap command renames the project folder and project in package.json and serverless.yml
 # and initializes a git repo
 yarn boostrap your-project-name 
+
 # Install dependencies
 yarn install
 ```
 
 ## Development
+
+Creating and deploying a new function takes two steps, which you can see in action with this repo's default Hello World function (if you're already familiar with Serverless, you're probably familiar with these steps).
+
+#### 1. Add your function to `serverless.yml`
+
+In the functions section of [`./serverless.yml`](./serverless.yml), you have to add your new function like so:
+
+```yaml
+functions:
+  hello:
+    handler: src/hello.default
+    events:
+      - http:
+          path: hello
+          method: get
+      # Ping every 5 minutes to avoid cold starts
+      - schedule:
+          rate: rate(5 minutes)
+          enabled: true
+```
+
+Ignoring the scheduling event, you can see here that we're setting up a function named `hello` with a handler at `src/hello.js` (the `.default` piece is just indicating that the function to run will be the default export from that file). The `http` event says that this function will run when an http event is triggered (on AWS, this happens via API Gateway).
+
+#### 2. Create your function
+
+This starter kit's Hello World function (which you will of course get rid of) can be found at [`./src/hello.js`](./src/hello.js). There you can see a basic function that's intended to work in conjunction with API Gateway (i.e., it is web-accessible). Like most Serverless functions, the `hello` function accepts an event, context, and callback. When your function is completed, you execute the callback with your response. (This is all basic Serverless; if you've never used it, be sure to read through [their docs](https://serverless.com/framework/docs/).
+
+------
 
 You can develop and test your lambda functions locally in a few different ways.
 
@@ -43,7 +75,7 @@ To spin up a local dev server that will more closely match the API Gateway endpo
 yarn serve
 ```
 
-### Test your functions
+### Test your functions with Jest
 
 Jest is installed as the testrunner. To create a test, co-locate your test with the file it's testing
 as `<filename>.test.js` and then run/watch tests with:
