@@ -10,11 +10,12 @@ This starter kit provides a relatively light layer on top of the Serverless fram
 yarn global add serverless
 
 # Use the serverless cli to install this repo
-serverless install https://github.com/postlight/serverless-babel-starter
+serverless install --url https://github.com/postlight/serverless-babel-starter
 
 # cd into project and set it up
 cd serverless-babel-starter
 # The bootstrap command renames the project folder and project in package.json and serverless.yml
+# and initializes a git repo
 yarn boostrap your-project-name 
 # Install dependencies
 yarn install
