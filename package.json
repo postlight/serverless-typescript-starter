@@ -4,6 +4,7 @@
   "main": "src/handler.js",
   "license": "MIT",
   "scripts": {
+    "bootstrap": "./scripts/bootstrap.sh",
     "deploy:env": "sls deploy --stage $NODE_ENV",
     "deploy": "export NODE_ENV=dev && yarn deploy:env",
     "deploy:production": "export NODE_ENV=production && yarn deploy:env",

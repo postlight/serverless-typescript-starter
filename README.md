@@ -1,13 +1,23 @@
-## Install
-
+# Stacked Serverless Starter Kit
 [![Greenkeeper badge](https://badges.greenkeeper.io/postlight/serverless-babel-starter.svg)](https://greenkeeper.io/)
 
+This starter kit provides a relatively light layer on top of the Serverless framework, giving you the latest in modern JavaScript (ES6 via Webpack + Babel, linting with ESLint, and formatting with Prettier),  and the ease and power of Serverless.
+
+## Install
+
 ```bash
-git clone git@github.com:postlight/serverless-babel-starter.git project_name
-cd project_name
-rm -rf .git
-git init && git add . && git commit -m "Initial commit"
-yarn
+# If you don't already have the serverless cli installed, do that
+yarn global add serverless
+
+# Use the serverless cli to install this repo
+serverless install https://github.com/postlight/serverless-babel-starter
+
+# cd into project and set it up
+cd serverless-babel-starter
+# The bootstrap command renames the project folder and project in package.json and serverless.yml
+yarn boostrap your-project-name 
+# Install dependencies
+yarn install
 ```
 
 ## Development
