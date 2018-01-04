@@ -1,9 +1,11 @@
 ![logo](./logo.png)
 [![Greenkeeper badge](https://badges.greenkeeper.io/postlight/serverless-babel-starter.svg)](https://greenkeeper.io/)
 
-Postlight's Modern Serverless Starter Kit provides a relatively light layer on top of the Serverless framework, giving you the latest in modern JavaScript (ES6 via Webpack + Babel, testing with Jest, linting with ESLint, and formatting with Prettier), the ease and power of Serverless, and a few handy helpers (like functions for handling warm functions and response helpers).
+Postlight's Modern Serverless Starter Kit adds a light layer on top of the Serverless framework, giving you the latest in modern JavaScript (ES6 via Webpack + Babel, testing with Jest, linting with ESLint, and formatting with Prettier), the ease and power of Serverless, and a few handy helpers (like functions for handling warm functions and response helpers).
 
 Once installed, you can create and deploy functions with the latest ES6 features in minutes, with linting and formatting baked in.
+
+Read more about it in [this handy introduction](https://trackchanges.postlight.com/introducing-postlights-modern-serverless-starter-kit-53ebfbf4459f).
 
 Note: Currently, this starter kit specifically targets AWS.
 
