@@ -37,7 +37,7 @@
     "serverless": "^1.5.1",
     "serverless-offline": "^3.16.0",
     "serverless-webpack": "^4.2.0",
-    "webpack": "^3.6.0",
+    "webpack": "^4.0.0",
     "webpack-node-externals": "^1.5.4"
   },
   "dependencies": {
