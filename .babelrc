@@ -8,5 +8,9 @@
     }
     ]
   ],
-  "presets": ["es2015", "stage-0"]
+  "presets": [
+    ["env", {
+      "modules": false
+    }]
+  ]
 }
