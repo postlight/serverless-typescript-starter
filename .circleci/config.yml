@@ -5,12 +5,14 @@ jobs:
       - image: circleci/node:8.10
     steps:
       - checkout
+      - run: yarn install
       - run: yarn build
   test:
     docker:
       - image: circleci/node:8.10
     steps:
       - checkout
+      - run: yarn install
       - run: yarn lint
       - run: yarn test
       - run: yarn serverless invoke local --function hello
