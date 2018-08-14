@@ -16,14 +16,10 @@ Note: Currently, this starter kit specifically targets AWS.
 yarn global add serverless
 
 # Use the serverless cli to install this repo
-serverless install --url https://github.com/postlight/serverless-babel-starter
+serverless install --url https://github.com/postlight/serverless-babel-starter --name <your-service-name>
 
 # cd into project and set it up
-cd serverless-babel-starter
-
-# The bootstrap command renames the project folder and project in package.json and serverless.yml
-# and initializes a git repo
-yarn bootstrap your-project-name 
+cd <your-service-name>
 
 # Install dependencies
 yarn install
@@ -57,7 +53,7 @@ Ignoring the scheduling event, you can see here that we're setting up a function
 
 This starter kit's Hello World function (which you will of course get rid of) can be found at [`./src/hello.js`](./src/hello.js). There you can see a basic function that's intended to work in conjunction with API Gateway (i.e., it is web-accessible). Like most Serverless functions, the `hello` function accepts an event, context, and callback. When your function is completed, you execute the callback with your response. (This is all basic Serverless; if you've never used it, be sure to read through [their docs](https://serverless.com/framework/docs/).
 
-------
+---
 
 You can develop and test your lambda functions locally in a few different ways.
 
@@ -91,7 +87,6 @@ yarn test
 When you add a new function to your serverless config, you don't need to also add it as a new entry
 for Webpack. The `serverless-webpack` plugin allows us to follow a simple convention in our `serverless.yml`
 file which is uses to automatically resolve your function handlers to the appropriate file:
-
 
 ```yaml
 functions:
@@ -131,25 +126,25 @@ Your handler function can then handle this event like so:
 const myFunc = (event, context, callback) => {
   // Detect the keep-alive ping from CloudWatch and exit early. This keeps our
   // lambda function running hot.
-  if (event.source === 'aws.events') { // aws.events is the source for Scheduled events
-    return callback(null, 'pinged');
+  if (event.source === "aws.events") {
+    // aws.events is the source for Scheduled events
+    return callback(null, "pinged");
   }
 
   // ... the rest of your function
-}
+};
 
 export default myFunc;
-
 ```
 
 Copying and pasting the above can be tedious, so we've added a higher order function to wrap your run-warm functions. You still need to config the ping in your `serverless.yml` file; then your function should look like this:
 
 ```javascript
-import runWarm from './utils'
+import runWarm from "./utils";
 
 const myFunc = (event, context, callback) => {
   // Your function logic
-}
+};
 
 export default runWarm(myFunc);
 ```

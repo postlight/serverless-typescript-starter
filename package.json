@@ -4,7 +4,6 @@
   "main": "src/handler.js",
   "license": "MIT",
   "scripts": {
-    "bootstrap": "./scripts/bootstrap.sh",
     "deploy:env": "sls deploy --stage $NODE_ENV",
     "deploy": "export NODE_ENV=dev && yarn deploy:env",
     "deploy:production": "export NODE_ENV=production && yarn deploy:env",
@@ -34,6 +33,7 @@
     "husky": "^0.14.3",
     "jest": "^23.5.0",
     "lint-staged": "^7.2.2",
+    "prettier": "^1.14.2",
     "serverless": "^1.30.0",
     "serverless-offline": "^3.25.7",
     "serverless-webpack": "^5.2.0",
@@ -44,7 +44,7 @@
   "lint-staged": {
     "src/**/*.js": [
       "yarn lint -- --fix",
-      "prettier --write --single-quote --trailing-comma es5",
+      "prettier --write",
       "git add"
     ]
   }
