@@ -16,10 +16,8 @@
     "test": "jest",
     "test:watch": "jest --watch",
     "build": "serverless webpack",
-    "watch:hello":
-      "serverless invoke local --watch --function hello --path fixtures/event.json",
-    "watch:warm":
-      "serverless invoke local --watch --function hello --path fixtures/scheduled.json"
+    "watch:hello": "serverless invoke local --watch --function hello --path fixtures/event.json",
+    "watch:warm": "serverless invoke local --watch --function hello --path fixtures/scheduled.json"
   },
   "devDependencies": {
     "@babel/core": "^7.0.0-rc.1",
@@ -42,9 +40,7 @@
     "webpack": "^4.16.5",
     "webpack-node-externals": "^1.7.2"
   },
-  "dependencies": {
-    "babel-runtime": "^6.22.0"
-  },
+  "dependencies": {},
   "lint-staged": {
     "src/**/*.js": [
       "yarn lint -- --fix",
