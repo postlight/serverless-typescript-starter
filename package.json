@@ -1,6 +1,6 @@
 {
   "name": "serverless-starter",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "main": "src/handler.js",
   "license": "MIT",
   "scripts": {
@@ -19,8 +19,7 @@
     "watch:hello":
       "serverless invoke local --watch --function hello --path fixtures/event.json",
     "watch:warm":
-      "serverless invoke local --watch --function hello --path fixtures/scheduled.json",
-    "invoke:test": "serverless invoke local --function hello"
+      "serverless invoke local --watch --function hello --path fixtures/scheduled.json"
   },
   "devDependencies": {
     "@babel/core": "^7.0.0-rc.1",
