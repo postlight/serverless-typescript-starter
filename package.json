@@ -16,9 +16,11 @@
     "test": "jest",
     "test:watch": "jest --watch",
     "build": "serverless webpack",
-    "watch:hello": "serverless invoke local --watch --function hello --path fixtures/event.json",
-    "watch:warm": "serverless invoke local --watch --function hello --path fixtures/scheduled.json",
-    "invoke-test": "serverless invoke local --function hello"
+    "watch:hello":
+      "serverless invoke local --watch --function hello --path fixtures/event.json",
+    "watch:warm":
+      "serverless invoke local --watch --function hello --path fixtures/scheduled.json",
+    "invoke:test": "serverless invoke local --function hello"
   },
   "devDependencies": {
     "@babel/core": "^7.0.0-rc.1",
