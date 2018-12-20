@@ -9,7 +9,12 @@ module.exports = {
   module: {
     rules: [
       {
-        test: /\.js$/,
+        test: /\.tsx?$/,
+        use: 'ts-loader',
+        exclude: /node_modules/
+      },
+      {
+        test: /\.jsx?$/,
         include: __dirname,
         exclude: /node_modules/,
         use: {
@@ -18,4 +23,8 @@ module.exports = {
       },
     ],
   },
+	resolve: {
+		extensions: [ '.tsx', '.ts', '.js', '.jsx' ]
+	},
+
 };

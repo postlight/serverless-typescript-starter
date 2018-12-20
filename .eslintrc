@@ -15,6 +15,17 @@
     "jasmine": true,
     "xit": true,
     "jest": true
+  },
+  "settings": {
+    "plugins": [
+      "import"
+    ],
+    "rules": {
+      "import/no-unresolved": "error"
+    },
+    "import/resolver": {
+      "typescript": {},
+    }
   }
 }
 
