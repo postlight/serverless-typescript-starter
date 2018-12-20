@@ -63,6 +63,16 @@ custom:
 #    - exclude-me-dir/**
 
 functions:
+  hello-typescript:
+    handler: src/hello-ts.default
+    events:
+      - http:
+          path: hello-typescript
+          method: get
+      # Ping every 5 minutes to avoid cold starts
+      - schedule:
+          rate: rate(5 minutes)
+          enabled: true
   hello:
     handler: src/hello.default
     events:
