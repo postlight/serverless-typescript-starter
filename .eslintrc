@@ -17,7 +17,6 @@
     "jest": true
   },
   "settings": {
-    "parser": "typescript-eslint-parser",
     "plugins": [
       "import"
     ],

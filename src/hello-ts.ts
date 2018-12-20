@@ -1,6 +1,10 @@
 import { successResponse, runWarm } from './utils';
 
-const helloTs: AWSLambda.Handler = (event: AWSLambda.APIGatewayEvent, _context, callback) => {
+const helloTs: AWSLambda.Handler = (
+  event: AWSLambda.APIGatewayEvent,
+  _context,
+  callback
+) => {
   // successResponse handles wrapping the response in an API Gateway friendly
   // format (see other responses, including CORS, in `./utils/lambda-response.js)
   const response = successResponse({
