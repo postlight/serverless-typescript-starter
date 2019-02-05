@@ -722,9 +722,10 @@
   version "8.10.15"
   resolved "https://registry.yarnpkg.com/@types/aws-lambda/-/aws-lambda-8.10.15.tgz#ea7094e9cacbcfa5e1b6b15baa12b7a438857fc7"
 
-"@types/jest@^23.3.10":
-  version "23.3.10"
-  resolved "https://registry.yarnpkg.com/@types/jest/-/jest-23.3.10.tgz#4897974cc317bf99d4fe6af1efa15957fa9c94de"
+"@types/jest@^24.0.0":
+  version "24.0.0"
+  resolved "https://registry.yarnpkg.com/@types/jest/-/jest-24.0.0.tgz#848492026c327b3548d92be0352a545c36a21e8a"
+  integrity sha512-kOafJnUTnMd7/OfEO/x3I47EHswNjn+dbz9qk3mtonr1RvKT+1FGVxnxAx08I9K8Tl7j9hpoJRE7OCf+t10fng==
 
 "@types/json5@^0.0.29":
   version "0.0.29"
