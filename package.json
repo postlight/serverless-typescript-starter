@@ -53,6 +53,11 @@
   "dependencies": {
     "@types/aws-lambda": "^8.10.15"
   },
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged && yarn test"
+    }
+  },
   "lint-staged": {
     "src/**/*.js": [
       "yarn lint",
