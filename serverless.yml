@@ -26,13 +26,23 @@ provider:
   # you can overwrite defaults here
   #  stage: dev
   #  region: us-east-1
+  iamRoleStatements:
+    - Effect: 'Allow'
+      Action:
+        - 'lambda:InvokeFunction'
+      Resource: '*'
 
 custom:
   webpackIncludeModules: true
   webpack:
     webpackConfig: ./webpack.config.js
-    packager: 'yarn'   # Packager that will be used to package your external modules
-
+    packager: 'yarn' # Packager that will be used to package your external modules
+  warmup:
+    enabled: true
+    events:
+      - schedule: rate(5 minutes)
+    prewarm: true
+    concurrency: 2
 
 # you can add statements to the Lambda function's IAM Role here
 #  iamRoleStatements:
@@ -115,4 +125,4 @@ functions:
 plugins:
   - serverless-webpack
   - serverless-offline
-
+  - serverless-plugin-warmup
