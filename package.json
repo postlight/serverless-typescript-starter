@@ -20,7 +20,7 @@
     "watch:warm": "serverless invoke local --watch --function hello --path fixtures/scheduled.json"
   },
   "devDependencies": {
-    "@babel/core": "7.2.2",
+    "@babel/core": "7.3.3",
     "@babel/preset-env": "7.3.1",
     "@types/jest": "^24.0.0",
     "babel-core": "^7.0.0-bridge.0",
