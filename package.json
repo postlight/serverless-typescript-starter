@@ -19,7 +19,7 @@
     "watch:hello": "serverless invoke local --watch --function hello --path fixtures/event.json"
   },
   "devDependencies": {
-    "@babel/core": "7.2.2",
+    "@babel/core": "7.3.3",
     "@babel/preset-env": "7.3.1",
     "@types/jest": "^24.0.0",
     "babel-core": "^7.0.0-bridge.0",
@@ -52,6 +52,11 @@
   },
   "dependencies": {
     "@types/aws-lambda": "^8.10.15"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged && yarn test"
+    }
   },
   "lint-staged": {
     "src/**/*.js": [
