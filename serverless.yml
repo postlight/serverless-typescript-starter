@@ -119,3 +119,4 @@ functions:
 plugins:
   - serverless-webpack
   - serverless-offline
+  - serverless-dotenv-plugin
