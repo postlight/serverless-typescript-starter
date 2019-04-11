@@ -113,7 +113,9 @@ custom:
     concurrency: 2
 ```
 
-Under `custom.warmup` you will find the configs needed to for this setup. You can browse all the options [here](https://www.npmjs.com/package/serverless-plugin-warmup#configuration).
+The above config would keep all of your deployed lambda functions running warm. The `prewarm` flag will ensure your function is warmed immediately after deploys (so you don't have to wait five minutes for the first scheduled event). And by setting the `concurrency` to `2`, we're keeping two instances warm for each deployed function.
+
+Under `custom.warmup`, you can set project-wide warmup behaviors. On the other hand, if you want to set function-specific behaviours, you should use the `warmup` key under the select functions. You can browse all the options [here](https://www.npmjs.com/package/serverless-plugin-warmup#configuration).
 
 Your handler function can then handle this event like so:
 

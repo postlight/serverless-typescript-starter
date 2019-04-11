@@ -47,7 +47,7 @@ custom:
     events:
       - schedule: rate(5 minutes)
     prewarm: true
-    concurrency: 2
+    concurrency: 1
 
 # you can add statements to the Lambda function's IAM Role here
 #  iamRoleStatements:
@@ -123,4 +123,3 @@ plugins:
   - serverless-webpack
   - serverless-offline
   - serverless-plugin-warmup
-
