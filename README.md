@@ -127,9 +127,9 @@ Your handler function can then handle this event like so:
 const myFunc = (event, context, callback) => {
   // Detect the keep-alive ping from CloudWatch and exit early. This keeps our
   // lambda function running hot.
-  if (event.source === "aws.events") {
+  if (event.source === 'aws.events') {
     // aws.events is the source for Scheduled events
-    return callback(null, "pinged");
+    return callback(null, 'pinged');
   }
 
   // ... the rest of your function
@@ -141,7 +141,7 @@ export default myFunc;
 Copying and pasting the above can be tedious, so we've added a higher order function to wrap your run-warm functions. You still need to config the ping in your `serverless.yml` file; then your function should look like this:
 
 ```javascript
-import runWarm from "./utils";
+import runWarm from './utils';
 
 const myFunc = (event, context, callback) => {
   // Your function logic
@@ -149,6 +149,26 @@ const myFunc = (event, context, callback) => {
 
 export default runWarm(myFunc);
 ```
+
+## Environment Variables
+
+If you have environment variables stored in a `.env` file, you can reference them inside your `serverless.yml` and inside your functions. Considering you have a `NAME` variable:
+
+In a function:
+
+```node
+process.env.NAME
+```
+
+In `serverless.yml`:
+
+```yaml
+provider:
+  name: ${env:NAME}
+  runtime: nodejs6.10
+```
+
+You can check the documentation [here](https://www.npmjs.com/package/serverless-dotenv-plugin).
 
 ## Deploy
 

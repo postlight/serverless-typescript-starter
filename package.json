@@ -42,6 +42,7 @@
     "nodemon": "^1.18.9",
     "prettier": "^1.14.2",
     "serverless": "^1.32.0",
+    "serverless-dotenv-plugin": "^2.0.1",
     "serverless-offline": "^4.0.0",
     "serverless-webpack": "^5.2.0",
     "ts-jest": "^24.0.0",
@@ -51,7 +52,14 @@
     "webpack-node-externals": "^1.7.2"
   },
   "dependencies": {
-    "@types/aws-lambda": "^8.10.15"
+    "@types/aws-lambda": "^8.10.15",
+    "@types/node": "^11.13.0",
+    "debug": "^4.1.1"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged && yarn test"
+    }
   },
   "lint-staged": {
     "src/**/*.{js,ts}": [
