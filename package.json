@@ -8,7 +8,7 @@
     "deploy": "export NODE_ENV=dev && yarn deploy:env",
     "deploy:production": "export NODE_ENV=production && yarn deploy:env",
     "deploy:stage": "export NODE_ENV=stage && yarn deploy:env",
-    "lint": "tslint -c tslint.json --fix './src/**/*.ts' && eslint ./src --fix",
+    "lint": "eslint src --ext ts,js --no-ignore --fix",
     "precommit": "lint-staged",
     "serve": "serverless offline start",
     "serve:watch": "nodemon -e js,ts,jsx,tsx -x serverless offline start",
@@ -21,11 +21,14 @@
   "devDependencies": {
     "@babel/core": "7.3.3",
     "@babel/preset-env": "7.3.1",
+    "@babel/preset-typescript": "^7.3.3",
     "@types/jest": "^24.0.0",
+    "@typescript-eslint/eslint-plugin": "^1.6.0",
+    "@typescript-eslint/parser": "^1.6.0",
     "babel-core": "^7.0.0-bridge.0",
     "babel-jest": "^23.4.2",
     "babel-loader": "^8.0.0",
-    "eslint": "^5.4.0",
+    "eslint": "^5.16.0",
     "eslint-config-airbnb": "^17.1.0",
     "eslint-config-prettier": "^4.0.0",
     "eslint-import-resolver-typescript": "^1.1.1",
@@ -38,20 +41,20 @@
     "nodemon": "^1.18.9",
     "prettier": "^1.14.2",
     "serverless": "^1.40.0",
+    "serverless-dotenv-plugin": "^2.0.1",
     "serverless-offline": "^4.0.0",
     "serverless-plugin-warmup": "^4.5.3-rc.1",
     "serverless-webpack": "^5.2.0",
     "ts-jest": "^24.0.0",
     "ts-loader": "^5.3.1",
-    "tslint": "^5.11.0",
-    "tslint-config-prettier": "^1.17.0",
-    "tslint-react": "^3.6.0",
     "typescript": "^3.2.1",
     "webpack": "^4.17.1",
     "webpack-node-externals": "^1.7.2"
   },
   "dependencies": {
-    "@types/aws-lambda": "^8.10.15"
+    "@types/aws-lambda": "^8.10.15",
+    "@types/node": "^11.13.0",
+    "debug": "^4.1.1"
   },
   "husky": {
     "hooks": {
@@ -59,7 +62,7 @@
     }
   },
   "lint-staged": {
-    "src/**/*.js": [
+    "src/**/*.{js,ts}": [
       "yarn lint",
       "prettier --write",
       "git add"

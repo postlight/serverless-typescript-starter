@@ -146,6 +146,26 @@ const myFunc = (event, context, callback) => {
 export default runWarm(myFunc);
 ```
 
+## Environment Variables
+
+If you have environment variables stored in a `.env` file, you can reference them inside your `serverless.yml` and inside your functions. Considering you have a `NAME` variable:
+
+In a function:
+
+```node
+process.env.NAME
+```
+
+In `serverless.yml`:
+
+```yaml
+provider:
+  name: ${env:NAME}
+  runtime: nodejs6.10
+```
+
+You can check the documentation [here](https://www.npmjs.com/package/serverless-dotenv-plugin).
+
 ## Deploy
 
 Assuming you've already set up your default AWS credentials (or have set a different AWS profile via [the profile field](serverless.yml#L25)):

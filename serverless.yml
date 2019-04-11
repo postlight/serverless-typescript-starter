@@ -123,3 +123,4 @@ plugins:
   - serverless-webpack
   - serverless-offline
   - serverless-plugin-warmup
+  - serverless-dotenv-plugin
