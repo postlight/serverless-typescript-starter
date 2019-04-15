@@ -42,10 +42,6 @@ functions:
       - http:
           path: hello
           method: get
-      # Ping every 5 minutes to avoid cold starts
-      - schedule:
-          rate: rate(5 minutes)
-          enabled: true
 ```
 
 Ignoring the scheduling event, you can see here that we're setting up a function named `hello` with a handler at `src/hello.js` (the `.default` piece is just indicating that the function to run will be the default export from that file). The `http` event says that this function will run when an http event is triggered (on AWS, this happens via API Gateway).
@@ -108,18 +104,18 @@ Lambda functions will go "cold" if they haven't been invoked for a certain perio
 A frequently running function won't have this problem, but you can keep your function running hot by scheduling a regular ping to your lambda function. Here's what that looks like in your `serverless.yml`:
 
 ```yaml
-functions:
-  myFunc:
-    handler: src/myFunc.default
-    timeout: 10
-    memorySize: 256
+custom:
+  warmup:
+    enabled: true
     events:
-      # ...other config happening up here and then...
-      # Ping every 5 minutes to avoid cold starts
-      - schedule:
-          rate: rate(5 minutes)
-          enabled: true
+      - schedule: rate(5 minutes)
+    prewarm: true
+    concurrency: 2
 ```
+
+The above config would keep all of your deployed lambda functions running warm. The `prewarm` flag will ensure your function is warmed immediately after deploys (so you don't have to wait five minutes for the first scheduled event). And by setting the `concurrency` to `2`, we're keeping two instances warm for each deployed function.
+
+Under `custom.warmup`, you can set project-wide warmup behaviors. On the other hand, if you want to set function-specific behaviours, you should use the `warmup` key under the select functions. You can browse all the options [here](https://www.npmjs.com/package/serverless-plugin-warmup#configuration).
 
 Your handler function can then handle this event like so:
 
@@ -127,8 +123,8 @@ Your handler function can then handle this event like so:
 const myFunc = (event, context, callback) => {
   // Detect the keep-alive ping from CloudWatch and exit early. This keeps our
   // lambda function running hot.
-  if (event.source === 'aws.events') {
-    // aws.events is the source for Scheduled events
+  if (event.source === 'serverless-plugin-warmup') {
+    // serverless-plugin-warmup is the source for Scheduled events
     return callback(null, 'pinged');
   }
 
