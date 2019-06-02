@@ -42,7 +42,7 @@
     "prettier": "^1.14.2",
     "serverless": "^1.40.0",
     "serverless-dotenv-plugin": "^2.0.1",
-    "serverless-offline": "^4.0.0",
+    "serverless-offline": "^5.0.0",
     "serverless-plugin-warmup": "^4.5.3-rc.1",
     "serverless-webpack": "^5.2.0",
     "ts-jest": "^24.0.0",
