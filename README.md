@@ -2,11 +2,11 @@
 [![Greenkeeper badge](https://badges.greenkeeper.io/postlight/serverless-babel-starter.svg)](https://greenkeeper.io/)
 [![CircleCI](https://circleci.com/gh/postlight/serverless-babel-starter/tree/master.svg?style=svg)](https://circleci.com/gh/postlight/serverless-babel-starter/tree/master)
 
-Postlight's Modern Serverless Starter Kit adds a light layer on top of the Serverless framework, giving you the latest in modern JavaScript (ES6 via Webpack + Babel, TypeScript (but only if you want it), testing with Jest, linting with ESLint, and formatting with Prettier), the ease and power of Serverless, and a few handy helpers (like functions for handling warm functions and response helpers).
+[Postlight](https://postlight.com)'s Modern Serverless Starter Kit adds a light layer on top of the Serverless framework, giving you the latest in modern JavaScript (ES6 via Webpack + Babel, TypeScript if you want it, testing with Jest, linting with ESLint, and formatting with Prettier), the ease and power of Serverless, and a few handy helpers (like functions for handling warm functions and response helpers).
 
 Once installed, you can create and deploy functions with the latest ES6 features in minutes, with linting and formatting baked in.
 
-Read more about it in [this handy introduction](https://trackchanges.postlight.com/introducing-postlights-modern-serverless-starter-kit-53ebfbf4459f).
+Read more about it in [this handy introduction](https://postlight.com/trackchanges/introducing-postlights-modern-serverless-starter-kit).
 
 Note: Currently, this starter kit specifically targets AWS.
 
@@ -187,3 +187,7 @@ yarn deploy:production
 
 After you've deployed, the output of the deploy script will give you the API endpoint
 for your deployed function(s), so you should be able to test the deployed API via that URL.
+
+---
+
+🔬 A Labs project from your friends at [Postlight](https://postlight.com). Happy coding!
