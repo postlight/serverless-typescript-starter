@@ -53,7 +53,7 @@
   },
   "dependencies": {
     "@types/aws-lambda": "^8.10.15",
-    "@types/node": "^11.13.0",
+    "@types/node": "^12.0.0",
     "debug": "^4.1.1"
   },
   "husky": {
