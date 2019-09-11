@@ -25,9 +25,6 @@ package:
 provider:
   name: aws
   runtime: nodejs10.x
-  # If you want to change to a different AWS profile
-  # from ~/.aws/credentials, you can do so here
-  profile: default
   # you can overwrite defaults here
   #  stage: dev
   #  region: us-east-1
