@@ -24,7 +24,7 @@ package:
 
 provider:
   name: aws
-  runtime: nodejs8.10
+  runtime: nodejs10.x
   # If you want to change to a different AWS profile
   # from ~/.aws/credentials, you can do so here
   profile: default
@@ -38,9 +38,9 @@ provider:
       Resource: '*'
 
 custom:
-  webpackIncludeModules: true
   webpack:
     webpackConfig: ./webpack.config.js
+    includeModules: true
     packager: 'yarn' # Packager that will be used to package your external modules
   warmup:
     enabled: true
