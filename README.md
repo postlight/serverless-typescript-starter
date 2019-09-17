@@ -146,6 +146,21 @@ const myFunc = (event, context, callback) => {
 export default runWarm(myFunc);
 ```
 
+### Pruning old versions of deployed functions
+
+The Serverless framework doesn't purge previous versions of functions from AWS, so the number of deployed versions can grow out of hand and eventually filling up your code storage. This starter kit includes [serverless-prune-plugin](https://github.com/claygregory/serverless-prune-plugin) that allows pruning these old versions from AWS automatically. The config for this plugin can be found in `serverless.yml` file:
+
+```yaml
+custom:
+  prune:
+    automatic: true
+    number: 5 # Number of versions to keep
+```
+
+The above config allows the removal of all stale versions, except for the last 5, automatically after each deployment.
+
+For further explanation of why this plugin is useful, check this [article](https://medium.com/fluidity/the-dark-side-of-aws-lambda-5c9f620b7dd2).
+
 ## Environment Variables
 
 If you have environment variables stored in a `.env` file, you can reference them inside your `serverless.yml` and inside your functions. Considering you have a `NAME` variable:
