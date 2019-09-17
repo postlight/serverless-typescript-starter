@@ -1977,6 +1977,21 @@ aws-sdk@^2.518.0:
     uuid "3.3.2"
     xml2js "0.4.19"
 
+aws-sdk@^2.529.0:
+  version "2.529.0"
+  resolved "https://registry.yarnpkg.com/aws-sdk/-/aws-sdk-2.529.0.tgz#97cc8017fd5d6e3c9270f141cb8efa24796fc9d7"
+  integrity sha512-CtRxgI4ZVZ8cdFCddlIVIy06cEW5gzTJBpyouZ/ySgZ6BiYj+0e77LwoNsnQE2nUNWCbydTLn3dbz4ZZMDpuIg==
+  dependencies:
+    buffer "4.9.1"
+    events "1.1.1"
+    ieee754 "1.1.8"
+    jmespath "0.15.0"
+    querystring "0.2.0"
+    sax "1.2.1"
+    url "0.10.3"
+    uuid "3.3.2"
+    xml2js "0.4.19"
+
 aws-sign2@~0.7.0:
   version "0.7.0"
   resolved "https://registry.yarnpkg.com/aws-sign2/-/aws-sign2-0.7.0.tgz#b46e890934a9591f2d2f6f86d7e6a9f1b3fe76a8"
@@ -2107,7 +2122,7 @@ bl@^1.0.0:
     readable-stream "^2.3.5"
     safe-buffer "^5.1.1"
 
-bluebird@^3.5.4, bluebird@^3.5.5:
+bluebird@^3.4.7, bluebird@^3.5.4, bluebird@^3.5.5:
   version "3.5.5"
   resolved "https://registry.yarnpkg.com/bluebird/-/bluebird-3.5.5.tgz#a8d0afd73251effbbd5fe384a77d73003c17a71f"
   integrity sha512-5am6HnnfN+urzt4yfg7IgTbotDjIT/u8AJpEt0sIU9FtXfVeezXAPKswrG+xKUCOYAINpSdgZVDU6QFh+cuH3w==
@@ -8290,6 +8305,13 @@ serverless-plugin-warmup@^4.7.0-rc.1:
   integrity sha512-iQO7rG89JOFhCVIaveKoaFqIo29wpgUlmRK94etEqC6yr7LzBhQnPyXJGBnETAIMDG8H4GZKXSCtYCVWlN2g4Q==
   dependencies:
     fs-extra "^8.0.1"
+
+serverless-prune-plugin@^1.4.1:
+  version "1.4.1"
+  resolved "https://registry.yarnpkg.com/serverless-prune-plugin/-/serverless-prune-plugin-1.4.1.tgz#94f43e69989de39647e7dc3e7e0c86db1999aba7"
+  integrity sha512-4kXCqdLoAlsQXZPWM2pzZiO0jAqpFQMIoCTkAK4P6JdrMgg8714yAYTzoRD/IZ4f6eS3GLjMoFOCxlrNA9LbKQ==
+  dependencies:
+    bluebird "^3.4.7"
 
 serverless-webpack@^5.3.1:
   version "5.3.1"

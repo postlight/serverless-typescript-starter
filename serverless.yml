@@ -45,6 +45,9 @@ custom:
       - schedule: rate(5 minutes)
     prewarm: true
     concurrency: 1
+  prune:
+    automatic: true
+    number: 5 # Number of versions to keep
 
 # you can add statements to the Lambda function's IAM Role here
 #  iamRoleStatements:
@@ -121,3 +124,4 @@ plugins:
   - serverless-offline
   - serverless-plugin-warmup
   - serverless-dotenv-plugin
+  - serverless-prune-plugin
