@@ -148,7 +148,7 @@ export default runWarm(myFunc);
 
 ### Pruning old versions of deployed functions
 
-The Serverless framework doesn't purge previous versions of functions from AWS, so the number of deployed versions can grow out of hand and eventually filling up your code storage. This starter kit includes [serverless-prune-plugin](https://github.com/claygregory/serverless-prune-plugin) that allows pruning these old versions from AWS automatically. The config for this plugin can be found in `serverless.yml` file:
+The Serverless framework doesn't purge previous versions of functions from AWS, so the number of previous versions can grow out of hand and eventually filling up your code storage. This starter kit includes [serverless-prune-plugin](https://github.com/claygregory/serverless-prune-plugin) which automatically prunes old versions from AWS. The config for this plugin can be found in `serverless.yml` file. The defaults are:
 
 ```yaml
 custom:
@@ -157,9 +157,9 @@ custom:
     number: 5 # Number of versions to keep
 ```
 
-The above config allows the removal of all stale versions, except for the last 5, automatically after each deployment.
+The above config removes all but the last five stale versions automatically after each deployment.
 
-For further explanation of why this plugin is useful, check this [article](https://medium.com/fluidity/the-dark-side-of-aws-lambda-5c9f620b7dd2).
+Go [here](https://medium.com/fluidity/the-dark-side-of-aws-lambda-5c9f620b7dd2) for more on why pruning is useful.
 
 ## Environment Variables
 
