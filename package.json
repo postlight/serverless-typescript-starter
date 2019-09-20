@@ -10,13 +10,13 @@
     "deploy:stage": "export NODE_ENV=stage && yarn deploy:env",
     "lint": "eslint src --ext ts,js --no-ignore --fix",
     "precommit": "lint-staged",
-    "serve": "serverless offline start",
-    "serve:watch": "nodemon -e js,ts,jsx,tsx -x serverless offline start",
-    "tail:hello": "serverless logs --function hello --tail",
+    "serve": "sls offline start",
+    "serve:watch": "nodemon -e js,ts,jsx,tsx -x sls offline start",
+    "tail:hello": "sls logs --function hello --tail",
     "test": "jest",
     "test:watch": "jest --watch",
-    "build": "serverless webpack",
-    "watch:hello": "serverless invoke local --watch --function hello --path fixtures/event.json"
+    "build": "sls webpack",
+    "watch:hello": "sls invoke local --watch --function hello --path fixtures/event.json"
   },
   "devDependencies": {
     "@babel/core": "7.6.0",
