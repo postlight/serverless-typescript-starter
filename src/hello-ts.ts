@@ -9,9 +9,6 @@ const helloTs: Function = async (event: AWSLambda.APIGatewayEvent) => {
   });
 
   return response;
-
-  // Use this code if you don't use the http event with the LAMBDA-PROXY integration
-  // callback(null, { message: 'Go Serverless v1.0! Your function executed successfully!', event });
 };
 
 // runWarm function handles pings from the scheduler so you don't
