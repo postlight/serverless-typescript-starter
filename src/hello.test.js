@@ -1,10 +1,8 @@
 import hello from './hello';
 
 describe('hello', () => {
-  it('executes as expected', () => {
-    const cb = jest.fn();
-    hello({}, {}, cb);
-    expect(cb).toBeCalled();
-    expect(cb).toMatchSnapshot();
+  it('executes as expected', async () => {
+    const response = await hello({});
+    expect(response).toMatchSnapshot();
   });
 });
