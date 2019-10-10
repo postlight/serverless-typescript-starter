@@ -18,7 +18,7 @@
     "watch:hello": "sls invoke local --watch --function hello --path fixtures/event.json"
   },
   "devDependencies": {
-    "@babel/core": "7.6.0",
+    "@babel/core": "7.6.4",
     "@babel/preset-env": "7.6.0",
     "@babel/preset-typescript": "^7.6.0",
     "@types/jest": "^24.0.18",
