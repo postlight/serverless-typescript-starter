@@ -39,6 +39,7 @@ custom:
     webpackConfig: ./webpack.config.js
     includeModules: true
     packager: 'yarn' # Packager that will be used to package your external modules
+    excludeFiles: src/**/*.test.[t|j]s # Exclude test files
   warmup:
     enabled: true
     events:
@@ -78,12 +79,6 @@ custom:
 #    - exclude-me-dir/**
 
 functions:
-  hello-typescript:
-    handler: src/hello-ts.default
-    events:
-      - http:
-          path: hello-typescript
-          method: get
   hello:
     handler: src/hello.default
     events:
