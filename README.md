@@ -44,11 +44,11 @@ functions:
           method: get
 ```
 
-Ignoring the scheduling event, you can see here that we're setting up a function named `hello` with a handler at `src/hello.js` (the `.default` piece is just indicating that the function to run will be the default export from that file). The `http` event says that this function will run when an http event is triggered (on AWS, this happens via API Gateway).
+Ignoring the scheduling event, you can see here that we're setting up a function named `hello` with a handler at `src/hello.ts` (the `.default` piece is just indicating that the function to run will be the default export from that file). The `http` event says that this function will run when an http event is triggered (on AWS, this happens via API Gateway).
 
 #### 2. Create your function
 
-This starter kit's Hello World function (which you will of course get rid of) can be found at [`./src/hello.js`](./src/hello.js). There you can see a basic function that's intended to work in conjunction with API Gateway (i.e., it is web-accessible). Like most Serverless functions, the `hello` function is asynchronous and accepts an event & context. (This is all basic Serverless; if you've never used it, be sure to read through [their docs](https://serverless.com/framework/docs/).
+This starter kit's Hello World function (which you will of course get rid of) can be found at [`./src/hello.ts`](./src/hello.ts). There you can see a basic function that's intended to work in conjunction with API Gateway (i.e., it is web-accessible). Like most Serverless functions, the `hello` function is asynchronous and accepts an event & context. (This is all basic Serverless; if you've never used it, be sure to read through [their docs](https://serverless.com/framework/docs/).
 
 ---
 
@@ -73,7 +73,7 @@ yarn serve
 ### Test your functions with Jest
 
 Jest is installed as the testrunner. To create a test, co-locate your test with the file it's testing
-as `<filename>.test.js` and then run/watch tests with:
+as `<filename>.test.ts` and then run/watch tests with:
 
 ```bash
 yarn test
