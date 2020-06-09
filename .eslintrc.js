@@ -1,7 +1,7 @@
 module.exports = {
   parser: '@typescript-eslint/parser',
   plugins: ['@typescript-eslint'],
-  extends: ['prettier', 'airbnb'],
+  extends: ['airbnb', 'prettier'],
   parserOptions: {
     ecmaVersion: 6,
     sourceType: 'module',
