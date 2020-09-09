@@ -47,7 +47,7 @@
     "serverless-plugin-warmup": "^4.7.0-rc.1",
     "serverless-prune-plugin": "^1.4.1",
     "serverless-webpack": "^5.3.1",
-    "ts-jest": "^24.0.2",
+    "ts-jest": "^25.1.0",
     "ts-loader": "^6.1.0",
     "typescript": "^3.6.3",
     "webpack": "^4.39.3",
