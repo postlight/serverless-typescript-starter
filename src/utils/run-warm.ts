@@ -1,6 +1,6 @@
 const runWarm = (lambdaFunc: Function): AWSLambda.Handler => async (
   event,
-  context
+  context,
 ) => {
   // Detect the keep-alive ping from CloudWatch and exit early. This keeps our
   // lambda function running hot.

@@ -7,7 +7,17 @@ module.exports = {
     sourceType: 'module',
   },
   env: { jest: true, browser: true, node: true },
-  rules: { 'no-console': 'warn' },
+  rules: { 
+    'no-console': 'warn',
+    "import/extensions": [
+      "error",
+      "ignorePackages",
+      {
+        "js": "never",
+        "ts": "never",
+      }
+   ]
+  },
   settings: {
     'import/resolver': {
       node: {
