@@ -1,6 +1,6 @@
 import { successResponse, runWarm } from './utils';
 
-const hello = async event => {
+const hello = async (event) => {
   // successResponse handles wrapping the response in an API Gateway friendly
   // format (see other responses, including CORS, in `./utils/lambda-response.js)
   const response = successResponse({
