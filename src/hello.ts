@@ -1,4 +1,3 @@
-
 import { successResponse, runWarm } from './utils';
 import { Response } from './utils/lambda-response';
 
