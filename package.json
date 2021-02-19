@@ -8,6 +8,8 @@
     "deploy": "export NODE_ENV=dev && yarn deploy:env",
     "deploy:production": "export NODE_ENV=production && yarn deploy:env",
     "deploy:stage": "export NODE_ENV=stage && yarn deploy:env",
+    "start:docker": "docker-compose up -d",
+    "stop:docker":  "docker-compose down",
     "lint": "eslint src --ext ts,js --no-ignore --fix",
     "serve": "sls offline -P 4000",
     "serve:watch": "nodemon -e js,ts,jsx,tsx -x yarn serve",
