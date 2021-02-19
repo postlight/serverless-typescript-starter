@@ -1,0 +1,8 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`hello executes as expected 1`] = `
+Object {
+  "body": "{\\"message\\":\\"Go Serverless! Your function executed successfully!\\",\\"input\\":{\\"key3\\":\\"value3\\",\\"key2\\":\\"value2\\",\\"key1\\":\\"value1\\"}}",
+  "statusCode": 200,
+}
+`;

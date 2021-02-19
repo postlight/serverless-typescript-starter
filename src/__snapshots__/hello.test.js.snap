@@ -1,8 +1,0 @@
-// Jest Snapshot v1, https://goo.gl/fbAQLP
-
-exports[`hello executes as expected 1`] = `
-Object {
-  "body": "{\\"message\\":\\"Go Serverless! Your function executed successfully!\\",\\"input\\":{}}",
-  "statusCode": 200,
-}
-`;

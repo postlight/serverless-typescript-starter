@@ -1,14 +1,15 @@
-const runWarm = (lambdaFunc: Function): AWSLambda.Handler => async (
+const runWarm = (lambdaFunc: AWSLambda.Handler): AWSLambda.Handler => (
   event,
   context,
+  callback
 ) => {
   // Detect the keep-alive ping from CloudWatch and exit early. This keeps our
   // lambda function running hot.
   if (event.source === 'serverless-plugin-warmup') {
-    return 'pinged';
+    return callback(null, 'pinged');
   }
 
-  return lambdaFunc(event, context);
+  return lambdaFunc(event, context, callback);
 };
 
 export default runWarm;
