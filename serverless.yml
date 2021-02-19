@@ -49,6 +49,9 @@ custom:
   prune:
     automatic: true
     number: 5 # Number of versions to keep
+  serverless-offline:
+    host: 0.0.0.0 # for docker container hosting
+    httpPort: 4000
 
 # you can add statements to the Lambda function's IAM Role here
 #  iamRoleStatements:

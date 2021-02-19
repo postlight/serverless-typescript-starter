@@ -1,0 +1,15 @@
+version: '3.7'
+
+services:
+  serverless-typescript-starter:
+    build: .
+    ports:
+      - '4000:4000'
+    environment:
+      - AWS_ACCESS_KEY_ID=YOUR_AWS_ACCESS_KEY
+      - AWS_SECRET_ACCESS_KEY=YOUR_AWS_SECRET_KEY
+      - AWS_DEFAULT_REGION=AWS_REGION
+    container_name: serverless-typescript-starter
+    volumes:
+      - ./src/:/usr/src/app/src
+    command: yarn serve:watch
