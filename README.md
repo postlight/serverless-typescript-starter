@@ -1,8 +1,8 @@
 ![logo](./logo.png)
-[![Greenkeeper badge](https://badges.greenkeeper.io/postlight/serverless-babel-starter.svg)](https://greenkeeper.io/)
-[![CircleCI](https://circleci.com/gh/postlight/serverless-babel-starter/tree/master.svg?style=svg)](https://circleci.com/gh/postlight/serverless-babel-starter/tree/master)
+[![Greenkeeper badge](https://badges.greenkeeper.io/postlight/serverless-typescript-starter.svg)](https://greenkeeper.io/)
+[![CircleCI](https://circleci.com/gh/postlight/serverless-typescript-starter/tree/master.svg?style=svg)](https://circleci.com/gh/postlight/serverless-typescript-starter/tree/master)
 
-[Postlight](https://postlight.com)'s Modern Serverless Starter Kit adds a light layer on top of the Serverless framework, giving you the latest in modern JavaScript (ES6 via Webpack + Babel, TypeScript if you want it, testing with Jest, linting with ESLint, and formatting with Prettier), the ease and power of Serverless, and a few handy helpers (like functions for handling warm functions and response helpers).
+[Postlight](https://postlight.com)'s Modern Serverless Starter Kit adds a light layer on top of the Serverless framework, giving you the latest in modern JavaScript (ES6 via Webpack, TypeScript if you want it, testing with Jest, linting with ESLint, and formatting with Prettier), the ease and power of Serverless, and a few handy helpers (like functions for handling warm functions and response helpers).
 
 Once installed, you can create and deploy functions with the latest ES6 features in minutes, with linting and formatting baked in.
 
@@ -17,7 +17,7 @@ Note: Currently, this starter kit specifically targets AWS.
 yarn global add serverless
 
 # Use the serverless cli to install this repo
-serverless install --url https://github.com/postlight/serverless-babel-starter --name <your-service-name>
+serverless install --url https://github.com/postlight/serverless-typescript-starter --name <your-service-name>
 
 # cd into project and set it up
 cd <your-service-name>
