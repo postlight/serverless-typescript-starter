@@ -176,7 +176,7 @@ In `serverless.yml`:
 ```yaml
 provider:
   name: ${env:NAME}
-  runtime: nodejs6.10
+  runtime: nodejs12.x
 ```
 
 You can check the documentation [here](https://www.npmjs.com/package/serverless-dotenv-plugin).
