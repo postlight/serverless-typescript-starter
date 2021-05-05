@@ -1,6 +1,6 @@
 import hello from './hello';
 import context from './test/utils/handler-helper';
-import event from './test/fixtures/event.json';
+import event from '../fixtures/event.json';
 
 const callback = jest.fn();
 
